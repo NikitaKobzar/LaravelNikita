@@ -31,7 +31,7 @@ class MainController extends Controller
         if ($count_flag<$count_prod) $this->users_link_product($user_index, $count_prod, $count_flag+1);
     }
     protected function create_products(Int $user_id_flag = 1){
-        $count_prod = rand(200000,500000);
+        $count_prod = rand(20,50);
         $this->users_link_product($user_id_flag, $count_prod);
         if ($user_id_flag<10) $this->create_products($user_id_flag+1);
         return redirect()->route('/');
