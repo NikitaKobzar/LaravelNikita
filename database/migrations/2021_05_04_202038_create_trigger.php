@@ -17,7 +17,7 @@ class CreateTrigger extends Migration
             CREATE TRIGGER before_user_delete
 	        BEFORE DELETE ON user_models
             FOR EACH ROW
-            DELETE FROM product_models WHERE `user_id` = user_models.id;');
+            DELETE FROM product_models WHERE product_models.user_id = OLD.id;');
     }
 
     public function down()
